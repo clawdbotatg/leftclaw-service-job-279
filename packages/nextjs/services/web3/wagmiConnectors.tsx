@@ -3,6 +3,7 @@ import {
   baseAccount,
   ledgerWallet,
   metaMaskWallet,
+  phantomWallet,
   rainbowWallet,
   safeWallet,
   walletConnectWallet,
@@ -19,6 +20,7 @@ const showBurnerWallet =
 
 const wallets = [
   metaMaskWallet,
+  phantomWallet,
   walletConnectWallet,
   ledgerWallet,
   baseAccount,
@@ -46,7 +48,7 @@ export const wagmiConnectors = () => {
     ],
 
     {
-      appName: "scaffold-eth-2",
+      appName: "CLAWD Gate",
       projectId: scaffoldConfig.walletConnectProjectId,
     },
   );

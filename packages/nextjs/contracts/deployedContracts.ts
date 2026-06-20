@@ -4,6 +4,131 @@
  */
 import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 
-const deployedContracts = {} as const;
+const deployedContracts = {
+  8453: {
+    CLAWDGate: {
+      address: "0xc22B7b983EC81523c969753c2385106835E8CfCE",
+      abi: [
+        {
+          type: "constructor",
+          inputs: [
+            { name: "_clawdToken", type: "address", internalType: "address" },
+            { name: "_owner", type: "address", internalType: "address" },
+          ],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "clawdToken",
+          inputs: [],
+          outputs: [{ name: "", type: "address", internalType: "contract IERC20Minimal" }],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "hasAccess",
+          inputs: [
+            { name: "wallet", type: "address", internalType: "address" },
+            { name: "tier", type: "uint8", internalType: "uint8" },
+          ],
+          outputs: [{ name: "", type: "bool", internalType: "bool" }],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "minimumBalance",
+          inputs: [],
+          outputs: [{ name: "", type: "uint256", internalType: "uint256" }],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "owner",
+          inputs: [],
+          outputs: [{ name: "", type: "address", internalType: "address" }],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "registryAddress",
+          inputs: [],
+          outputs: [{ name: "", type: "address", internalType: "address" }],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "renounceOwnership",
+          inputs: [],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "setRegistry",
+          inputs: [{ name: "_registry", type: "address", internalType: "address" }],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "setTierThreshold",
+          inputs: [
+            { name: "tier", type: "uint8", internalType: "uint8" },
+            { name: "minBalance", type: "uint256", internalType: "uint256" },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "tierThresholds",
+          inputs: [{ name: "", type: "uint8", internalType: "uint8" }],
+          outputs: [{ name: "", type: "uint256", internalType: "uint256" }],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "transferOwnership",
+          inputs: [{ name: "newOwner", type: "address", internalType: "address" }],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "event",
+          name: "OwnershipTransferred",
+          inputs: [
+            { name: "previousOwner", type: "address", indexed: true, internalType: "address" },
+            { name: "newOwner", type: "address", indexed: true, internalType: "address" },
+          ],
+          anonymous: false,
+        },
+        {
+          type: "event",
+          name: "TierThresholdUpdated",
+          inputs: [
+            { name: "tier", type: "uint8", indexed: true, internalType: "uint8" },
+            { name: "newMinBalance", type: "uint256", indexed: false, internalType: "uint256" },
+          ],
+          anonymous: false,
+        },
+        {
+          type: "error",
+          name: "OwnableInvalidOwner",
+          inputs: [{ name: "owner", type: "address", internalType: "address" }],
+        },
+        {
+          type: "error",
+          name: "OwnableUnauthorizedAccount",
+          inputs: [{ name: "account", type: "address", internalType: "address" }],
+        },
+      ] as const,
+      inheritedFunctions: {
+        owner: "@openzeppelin/contracts/access/Ownable.sol",
+        renounceOwnership: "@openzeppelin/contracts/access/Ownable.sol",
+        transferOwnership: "@openzeppelin/contracts/access/Ownable.sol",
+      },
+    },
+  },
+} as const;
 
 export default deployedContracts satisfies GenericContractsDeclaration;
